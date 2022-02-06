@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+if Rails.env.development? && defined?(ActiveRecord::ConnectionAdapters::PostgreSQLAdapter)
+  require 'meta_request/stack_level_too_deep_hack'
+end
+
 module MetaRequest
   autoload :VERSION,          'meta_request/version'
   autoload :Config,           'meta_request/config'
