@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module MetaRequest
   class Storage
     attr_reader :key
@@ -9,7 +11,7 @@ module MetaRequest
     def write(value)
       FileUtils.mkdir_p dir_path
       File.open(json_file, 'wb') { |file| file.write(value) }
-      maintain_file_pool(10)
+      maintain_file_pool(MetaRequest.config.storage_pool_size)
     end
 
     def read
@@ -27,7 +29,7 @@ module MetaRequest
     end
 
     def file_ctime(file)
-      File.stat(file).ctime.to_i 
+      File.stat(file).ctime.to_i
     rescue Errno::ENOENT
       0
     end

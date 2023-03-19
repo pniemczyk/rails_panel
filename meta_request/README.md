@@ -23,11 +23,35 @@ If you're using [LiveReload](http://livereload.com/) or
 exclude watching your tmp/ folder because meta_request writes a lot of data there
 and your browser will refresh like a madman.
 
+## Configuration
+
+Gem can be configured using block:
+
+```ruby
+MetaRequest.configure do |config|
+  config.storage_pool_size = 30
+end
+```
+
+List of available attributes and defaults can be found in [lib/meta_request/config.rb](lib/meta_request/config.rb).
+
+## Docker
+
+Apps running in Docker container will have filepaths of the container so links to editor would not work. To fix this, you need to propagate working directory through environment variable `SOURCE_PATH`. With docker-compose it can be done like this:
+
+```yaml
+services:
+  app:
+    environment:
+      - SOURCE_PATH=$PWD
+    # ...
+```
+
 ## Development
 
-Run tests:
+Run all tests:
 
-    make
+    docker-compose up
 
 ## Licence
 

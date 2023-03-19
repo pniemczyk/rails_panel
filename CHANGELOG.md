@@ -1,3 +1,17 @@
+## 2019-08-03 meta_request 0.7.2
+* Added source_path config for better xp working with Docker https://github.com/dejan/rails_panel/pull/162
+
+## 2019-08-02 meta_request 0.7.1
+* Fix dev caller localtion https://github.com/dejan/rails_panel/pull/146
+* Handle missing SQL location https://github.com/dejan/rails_panel/pull/148
+* Storage pool size configuration https://github.com/dejan/rails_panel/pull/149
+
+## 2019-05-09 RailsPanel 0.3.2
+* Fix empty rails panel in Chrome https://github.com/dejan/rails_panel/pull/150
+
+## 2019-04-28 meta_request 0.7.0
+* Add rails 6.0-beta support https://github.com/dejan/rails_panel/pull/151
+
 ## 2018-04-06 meta_request 0.6.0
 * Add Sequel support https://github.com/dejan/rails_panel/pull/127
 
